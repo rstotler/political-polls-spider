@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rcpupdatesapp.FXMLRCPUpdatesController">
+   <children>
+      <TabPane fx:id="mainTabPane" prefHeight="562.0" prefWidth="613.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Polling">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <Button layoutX="10.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleEventLoadNextPollButton" text="&gt;">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="rcpPollNameLabel" layoutX="39.0" layoutY="10.0" />
+                        <Label fx:id="rcpAverageLabel" layoutX="180.0" layoutY="10.0" />
+                        <Label fx:id="rcpProjectionLabel" layoutX="374.0" layoutY="10.0" />
+                        <TableView fx:id="rcpPollTable" layoutX="10.0" layoutY="32.0" prefHeight="338.0" prefWidth="285.0">
+                          <columns>
+                            <TableColumn prefWidth="135.0" text="Poll Name" />
+                            <TableColumn prefWidth="90.0" text="Date" />
+                              <TableColumn prefWidth="30.0" text="\%" />
+                              <TableColumn prefWidth="15.0" text="*" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="rcpProjectionPollTable" layoutX="299.0" layoutY="32.0" prefHeight="290.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="134.0" text="Poll Name" />
+                            <TableColumn prefWidth="39.0" text="\%" />
+                              <TableColumn prefWidth="15.0" text="*" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="rcpProjectionRangeTable" layoutX="503.0" layoutY="32.0" prefHeight="290.0" prefWidth="100.0">
+                          <columns>
+                            <TableColumn prefWidth="30.0" text="+/-" />
+                            <TableColumn prefWidth="55.0" text="Average" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="userPollName" layoutX="299.0" layoutY="324.0" prefHeight="25.0" prefWidth="167.0" promptText="Poll Name" />
+                        <TextField fx:id="userPollApproval" alignment="CENTER" layoutX="468.0" layoutY="324.0" prefHeight="25.0" prefWidth="31.0" promptText="\%" />
+                        <CheckBox fx:id="rcpRangeProjectionsCheckBox" layoutX="513.0" layoutY="328.0" mnemonicParsing="false" prefWidth="82.0" selected="true" text="Projections" textAlignment="CENTER" />
+                        <Button layoutX="299.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleEventAddButton" prefWidth="43.0" text="Add">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="handleEventDropButton" layoutX="345.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleEventDropButton" prefHeight="24.0" prefWidth="44.0" text="Drop">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="392.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleEventDeleteButton" prefHeight="24.0" prefWidth="55.0" text="Delete">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="450.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleEventClearButton" prefHeight="24.0" prefWidth="48.0" text="Clear">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="rcpPingTimeLabel" layoutX="545.0" layoutY="362.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Label>
+                        <Button layoutX="501.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleEventClearInfoButton" text="*">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Updates">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleEventEnablePollUpdateButton" text="Enable/Disable">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="userEmailTextField" layoutX="101.0" layoutY="10.0" prefHeight="25.0" prefWidth="156.0" promptText="Email" />
+                        <TextField fx:id="userMinusTweetsTextField" alignment="CENTER" layoutX="272.0" layoutY="10.0" prefHeight="25.0" prefWidth="56.0" promptText="Minus #" />
+                        <Label fx:id="trumpTweetsLabel" layoutX="338.0" layoutY="14.0" />
+                        <CheckBox fx:id="emailUpdatesCheckBox" layoutX="272.0" layoutY="59.0" mnemonicParsing="false" text="Enable Emailer" />
+                        <Label layoutX="272.0" layoutY="39.0" text="Settings:" />
+                        <CheckBox fx:id="soundAlertsCheckBox" layoutX="272.0" layoutY="80.0" mnemonicParsing="false" selected="true" text="Sound Alerts" />
+                        <TableView fx:id="pollUpdateTable" layoutX="10.0" layoutY="38.0" prefHeight="290.0" prefWidth="247.0">
+                          <columns>
+                            <TableColumn prefWidth="195.0" text="Poll Name" />
+                            <TableColumn minWidth="0.0" prefWidth="15.0" text="*" />
+                              <TableColumn prefWidth="35.0" text="Ping" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <TextArea fx:id="infoTextArea" editable="false" layoutX="10.0" layoutY="408.0" prefHeight="144.0" prefWidth="592.0" />
+   </children>
+</AnchorPane>
