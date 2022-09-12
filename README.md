@@ -1,6 +1,6 @@
 # RealClearPolitics Spider/Bot
 
-- Scrapes polling data from RealClearPolitics.com using Jsoup
+- Uses Jsoup to scrape polling data from RealClearPolitics.com
 - Uses Gmail API for email alerts on poll updates
 - Add theoretical polls for user-projected averages
   
