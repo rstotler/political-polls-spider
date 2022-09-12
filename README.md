@@ -1,6 +1,6 @@
 # RealClearPolitics Spider/Bot
 
-- Srapes polling data from RealClearPolitics.com
+- Scrapes polling data from RealClearPolitics.com
 - Provides alerts on poll updates
 - Add theoretical polls for user-projected averages
 - Uses Gmail API for email alerts
